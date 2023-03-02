@@ -23,6 +23,7 @@ int fillmethod();
 typedef struct POINT {
     vector<int> neighbors;
 } POINT;
+
 typedef struct EDGE{
     int b,e;
 }EDGE;
@@ -32,9 +33,9 @@ void printEdgeList(vector<EDGE> Edges);
 
 
 //adjacency matrix
-int **initializeAdjacencyMatrix(int numberOfRows, int numberOfColumns);
+int **initializeAdjacencyMatrix(int numberOfRows);
 void readAdjacencyMatrix(int **&matrix, int & numberOfRows, char *input);
-void printAdjacencyMatrix(int **matrix, int numberOfRows,char *output);
+void printAdjacencyMatrix(int **matrix, int numberOfRows);
 
 //neighborhood list
 vector<POINT> neighborhoodListFromFile(char*input);

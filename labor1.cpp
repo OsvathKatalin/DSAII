@@ -49,7 +49,6 @@ void readMatrix(int **&matrix, int &numberOfRows, int &numberOfColumns, char *in
     cout<<"bb";
     ifstream fin(input);
     fin>>numberOfRows>>numberOfColumns;
-    cout<<numberOfRows<<" "<<numberOfColumns;
     matrix=initializeMatrix(numberOfRows,numberOfColumns);
     for(int i=0;i<numberOfRows;i++)
         for(int j=0;j<numberOfColumns;j++)

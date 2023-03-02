@@ -86,3 +86,67 @@ void printEdgeList(vector<EDGE> Edges) {
         cout<<e.b<<" "<<e.e<<endl;
     }
 }
+
+int **initializeAdjacencyMatrix(int numberOfRows) {
+    int **matrix;
+    matrix=new int*[numberOfRows+1];
+    for (int i=1;i<=numberOfRows;i++)
+    {
+        matrix[i]=new int[numberOfRows];
+    }
+    return matrix;
+}
+
+void readAdjacencyMatrix(int **&matrix, int &numberOfRows, char *input) {
+    ifstream fin(input);
+    fin>>numberOfRows;
+    matrix= initializeAdjacencyMatrix(numberOfRows);
+    for(int i=1;i<=numberOfRows;i++)
+    {
+        for(int j=1;j<=numberOfRows;j++)
+        {
+            fin>>matrix[i][j];
+        }
+    }
+    fin.close();
+}
+
+void printAdjacencyMatrix(int **matrix, int numberOfRows) {
+    for(int i=1;i<=numberOfRows;i++)
+    {
+        for(int j=1;j<=numberOfRows;j++)
+        {
+            cout<<matrix[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
+
+//neighbourhoodlist
+
+vector<POINT> neighborhoodListFromFile(char *input) {
+    ifstream fin(input);
+    vector <POINT>nList;
+    int numberOfRows,numberOfNeighbours,a;
+    fin>>numberOfRows;
+    for(int i=1;i<=numberOfRows;i++)
+    {
+        fin>>numberOfNeighbours;
+        for(int j=1;j<=numberOfNeighbours;j++)
+        {
+            fin>>a;
+            pushb nList[i].neighbors;
+        }
+
+
+    }
+
+
+
+    return vector<POINT>();
+}
+
+void printNeighborhoodList(vector<POINT> Points, char *output) {
+
+}

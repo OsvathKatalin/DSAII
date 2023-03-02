@@ -3,5 +3,5 @@ project(DSA2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DSA2 main.cpp labor1.cpp labor1.h constants.h labor2.cpp labor2.h)
+add_executable(DSA2 main.cpp labor1.cpp labor1.h constants.h labor2.cpp labor2.h labor3.cpp labor3.h)
 include_directories(DSA2)
