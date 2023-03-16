@@ -2,6 +2,8 @@
 #include "labor1.h"
 #include "labor2.h"
 #include "labor3.h"
+#include "labor4.h"
+#include "labor5.h"
 
 void lab1task1() {
     int *array, n;
@@ -43,11 +45,23 @@ void lab3()
     cout<<averageDigitsOfNumber(123,0,0);
 }
 
+
+void lab5()
+{
+    vector<Point> points;
+    points = neighborhoodListFromFile2("bebfs.txt");
+    vector<int>bfs = bfs_vector(points,0);
+    print_vector(bfs);
+
+}
+
+
 int main() {
 
   //lab1();
    //lab2();
-   lab3();
+   //lab3();
+   lab5();
 
 
 

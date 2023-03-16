@@ -136,7 +136,7 @@ vector<POINT> neighborhoodListFromFile(char *input) {
         for(int j=1;j<=numberOfNeighbours;j++)
         {
             fin>>a;
-            pushb nList[i].neighbors;
+            nList[i].neighbors;
         }
 
 
