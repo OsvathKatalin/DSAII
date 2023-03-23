@@ -4,6 +4,7 @@
 #include "labor3.h"
 #include "labor4.h"
 #include "labor5.h"
+#include "labor6.h"
 
 void lab1task1() {
     int *array, n;
@@ -55,14 +56,21 @@ void lab5()
 
 }
 
+void lab6()
+{
+     f1();
+     f2();
+}
+
+
 
 int main() {
 
-  //lab1();
+   //lab1();
    //lab2();
    //lab3();
-   lab5();
-
+   //lab5();
+    lab6();
 
 
     return 0;
