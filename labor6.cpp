@@ -66,6 +66,50 @@ long int palindrom(long int nr, int pali = 0) {
         }
     }
 
+    bool binary(long int nr)
+    {
+    if(nr==0 or nr==1) return true;
+    else
+    if (nr%10>1) return false;
+    else return binary(nr/10);
+    }
+
+    bool ascending(long int nr)
+    {
+    if (nr<10) return true;
+    else {if((nr/10)%10>nr%10) return false;
+        else return ascending(nr/10);}
+    }
+
+
+    bool mgh(char c)
+    {
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') return true;
+        else return false;
+    }
+
+    string deletemgh(string szoveg)
+    {
+    if(szoveg.length()==0)
+        return szoveg;
+    else
+        if (mgh(szoveg[0]))
+            return deletemgh(szoveg.substr(1));
+        else
+            return szoveg[0] + deletemgh(szoveg.substr(1));
+    }
+
+
+    int countWords(string szoveg)
+    {
+    if (szoveg.length()==0)
+        return 0;
+    else {
+        if(szoveg.find(' ')!=string::npos) //npos a find fuggveny visszateritett konstans erteke ha nem talalta azt meg
+        return 1+ countWords(szoveg.substr(szoveg.find(' ')+1));
+    else return 1;}
+
+    }
 
 void f1()
 { //1->5
@@ -79,15 +123,81 @@ void f1()
 }
 
 void f2()
-{ //6->
+{ //6->9
     int m=8;
     cout<<"Elso n darab paros szam oszzege:"<<sumpair(m)<<endl;
     cout<<"Számjegy előfordulása egy adott számban:"<<countM(12343432,3)<<endl;
     double n=  234565432;
     cout<<palindrom(n,0)<<endl;
-    if(palindrom(n,0)==n)  cout<<"Palindrom: "<<palindrom(n,0);
-        else cout<<"nem "<<palindrom(n,0);
+    if(palindrom(n,0)==n)  cout<<"Palindrom: "<<palindrom(n,0)<<endl;
+        else cout<<"nem "<<palindrom(n,0)<<endl;
+        long int nr=1111000011;
+     if(binary(nr)) cout<<nr<<" binaris"<<endl;
+        else cout<<nr<<" nem binaris"<<endl;
+
+        nr=123455432;
+    if(binary(nr)) cout<<nr<<" binaris"<<endl;
+    else cout<<nr<<" nem binaris"<<endl;
+
+    if(ascending(nr)) cout<<nr<<" novekvo szamjegyek"<<endl;
+    else cout<<nr<<" nem novekvo szamjegyek"<<endl;
+
+    nr = 1234567;
+    //nr=8765432;
+    if(ascending(nr)) cout<<nr<<" novekvo szamjegyek"<<endl;
+    else cout<<nr<<" nem novekvo szamjegyek"<<endl;
 
 
+    string szoveg= "nem akarok porszivozni";
+    cout<<deletemgh(szoveg)<<endl;
+    cout<<"szavak szama:"<<countWords(szoveg);
+
+}
+
+
+// Rekurzív legnagyobb közös osztó számítása
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+// Rekurzív legkisebb közös többszörös számítása
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+
+
+
+void f3(){
+    //tortek osszeadasa
+    // beolvas allomanybol
+    typedef struct Tort{
+        int szamlalo;
+        int nevezo;
+    };
+}
+
+int binarySearch(vector<int>& nums, int left, int right, int target, int step) {
+    if (left > right) {
+        // Az elem nem található meg
+        return -1;
+    }
+
+    int middle = (left + right) / 2;
+    if (nums[middle] == target) {
+        // Az elem megtalálva
+        return step;
+    } else if (nums[middle] > target) {
+        // Az elem a bal oldalon lehet
+        return binarySearch(nums, left, middle - 1, target, step + 1);
+    }
+}
+
+void f4(){
+    //divid et impera
+    vector<int> nums =  {3, 5, -7, 8, 2, -1, 6};
+    sort(nums.begin(), nums.end());
 }
 

@@ -6,9 +6,12 @@
 #define DSA2_LABOR6_H
 #include <stdio.h>
 #include <iostream>
-#include <string.h>
+#include <string>
+#include <vector>
 using namespace std;
 void f1();
 void f2();
+void f3();
+
 
 #endif //DSA2_LABOR6_H
