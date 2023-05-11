@@ -111,6 +111,9 @@ long int palindrom(long int nr, int pali = 0) {
 
     }
 
+
+
+
 void f1()
 { //1->5
     int n=6;
@@ -200,4 +203,6 @@ void f4(){
     vector<int> nums =  {3, 5, -7, 8, 2, -1, 6};
     sort(nums.begin(), nums.end());
 }
+
+
 

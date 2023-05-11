@@ -5,6 +5,7 @@
 #include "labor4.h"
 #include "labor5.h"
 #include "labor6.h"
+#include "labor8.h"
 
 void lab1task1() {
     int *array, n;
@@ -62,6 +63,15 @@ void lab6()
      f2();
 }
 
+void lab8()
+{
+        int *x, n;
+        cin >> n;
+        x = (int *) calloc(n, sizeof(int));
+        int s=0;
+        BTP(x, n, 1,s);
+        cout<<s;
+}
 
 
 int main() {
@@ -70,8 +80,8 @@ int main() {
    //lab2();
    //lab3();
    //lab5();
-    lab6();
-
+   // lab6();
+    lab8();
 
     return 0;
 }
